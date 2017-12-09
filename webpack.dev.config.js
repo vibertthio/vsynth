@@ -1,37 +1,21 @@
 const webpack = require('webpack');
 const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const loaders = require('./webpack.loaders');
 
 module.exports = {
-	entry: './src/three.js',
+	entry: {
+		main: './src/index.js',
+		three: './src/three/app.js',
+	},
 	output: {
-		path: path.resolve(__dirname, 'dist/js'),
-		publicPath: '/js/',
-		filename: 'three.bundle.js',
+		path: path.resolve(__dirname, 'public/'),
+		publicPath: '/',
+		filename: './js/[name].[hash].bundle.js',
 	},
 	module: {
-		loaders: [
-			{
-				test: /\.js$/,
-				exclude: /(node_modules|bower_components)/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						presets: ['env'],
-					},
-				},
-			},
-			{
-				test: /\.(glsl|frag|vert)$/,
-				loader: 'raw-loader',
-				exclude: /node_modules/,
-			},
-			{
-				test: /\.(glsl|frag|vert)$/,
-				loader: 'glslify-loader',
-				exclude: /node_modules/,
-			},
-		],
+		loaders,
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(), // Enable HMR
@@ -57,11 +41,18 @@ module.exports = {
 				reload: false,
 			},
 		),
+		new HtmlWebpackPlugin({
+			template: './src/template.html',
+			files: {
+				js: ['bundle.js'],
+			},
+			filename: 'index.html',
+		}),
 	],
 	devServer: {
 		hot: true, // Tell the dev-server we're using HMR
-		contentBase: path.resolve(__dirname, 'dist'),
-		publicPath: '/js/',
+		contentBase: path.resolve(__dirname, 'public'),
+		publicPath: '/',
 	},
 	watch: true,
 	devtool: 'cheap-eval-source-map',
