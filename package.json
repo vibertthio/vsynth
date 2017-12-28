@@ -1,5 +1,6 @@
 {
-  "name": "three-starter",
+  "name": "vsynth",
+  "auther": "Vibert Thio",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
