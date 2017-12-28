@@ -1,6 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import styles from './index.module.css';
+import particles from './three/particles/';
+
+particles();
 
 const App = () => (
   <div className={styles.title}>

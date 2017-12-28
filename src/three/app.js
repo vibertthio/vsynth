@@ -2,9 +2,9 @@
 //
 // box();
 
-import particles from './particles/';
-
-particles();
+// import particles from './particles/';
+//
+// particles();
 
 
 // HMR Hot Module Replacement
