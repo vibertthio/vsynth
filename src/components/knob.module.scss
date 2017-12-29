@@ -1,0 +1,75 @@
+@function makeShadow($original-shadow, $l) {
+  $val: #{$original-shadow}, 0px 0px rgba(0,0,0,0.1);
+  @for $i from 1 through $l {
+    $start1: 1;
+    $stop1: $l;
+    $start2: 0.05;
+    $stop2: 0;
+    $opacity: ((($i - $start1)/($stop1 - $start1))*($stop2 - $start2) + $start2);
+    $val: #{$val}, -#{$i - 1}px #{$i}px 2px rgba(0,0,0, $opacity);
+  }
+  @return $val;
+}
+
+@mixin longshadow($original-shadow: "") {
+  box-shadow: makeShadow($original-shadow, 15);
+}
+
+@mixin shortshadow($original-shadow: "") {
+  box-shadow: makeShadow($original-shadow, 10);
+}
+
+$grid-unit: 60px;
+
+.module {
+  flex: 1 0 auto;
+  height:auto;
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  .knob {
+    width: 100%;
+    margin: auto;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    background-color: #eee;
+    position: relative;
+
+    $original-shadow: inset 0 -3px 1px rgba(0,0,0,0.2),
+                  inset 0 3px 1px rgba(255,255,255,.9);
+    @include longshadow($original-shadow);
+
+    //marker
+    .indicator {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 3px;
+      height: 25%;
+      transform: rotate(0deg);
+      transform-origin: 50% 200%;
+      background-color: #EA5D5D;
+    }
+
+    .dot {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 12%;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      transform: rotate(0deg);
+      transform-origin: 0% 500%;
+      background-color: #888;
+    }
+  }
+
+  .knob.active {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}

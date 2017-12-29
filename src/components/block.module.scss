@@ -1,0 +1,40 @@
+.container {
+  width: 100%;
+  height: 100%;
+  // padding: $grid-unit;
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: 3px;
+  background-color: #eee;
+  box-shadow:
+    inset
+    0 5px 5px #FFF,
+    0 6px 10px #000,
+    0 15px 20px rgba(0,0,0,0.2);
+  transition: all .5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+
+  .viewHelp & {
+    box-shadow: none;
+  }
+}
+
+.table {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+
+.row {
+  height: 100vh;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}

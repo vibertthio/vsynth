@@ -1,24 +1,34 @@
 import React from 'react';
 import { render } from 'react-dom';
-import styles from './index.module.css';
-import particles from './three/particles/';
-import sound from './sound';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
-particles();
+import './index.scss';
+import styles from './index.module.scss';
+import sound from './sound';
+import Block from './components/block';
+
+// import particles from './three/particles/';
+// particles();
+injectTapEventPlugin();
 sound();
 
 const App = () => (
-  <div className={styles.title}>
-    <a
-      href="https://vibertthio.com/portfolio/"
-      target="_blank"
-      rel="noreferrer noopener"
-      onClick={() => {
-				console.log('clicked link');
-			}}
-    >
-			Vibert Thio
-    </a>
+  <div>
+    <div className={styles.main}>
+      <Block />
+    </div>
+    <div className={styles.title}>
+      <a
+        href="https://vibertthio.com/portfolio/"
+        target="_blank"
+        rel="noreferrer noopener"
+        onClick={() => {
+					console.log('clicked link');
+				}}
+      >
+				Vibert Thio
+      </a>
+    </div>
   </div>
 );
 
