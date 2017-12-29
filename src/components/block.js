@@ -5,19 +5,12 @@ import Button from './button';
 import styles from './block.module.scss';
 import Vsynth from '../sound/vsynth';
 
-
 class Block extends Component {
 	constructor() {
 		super();
 		const n = 8;
-		// const data = Array(n).fill(Array(n).fill(0));
-		const data = [];
-		for (let i = 0; i < n; i += 1) {
-			data[i] = [];
-			for (let j = 0; j < n; j += 1) {
-				data[i][j] = 0;
-			}
-		}
+		const data = Array(n).fill([]).map(() => Array(n).fill(10));
+
 		this.number = n;
 		this.state = {
 			on: false,
@@ -28,10 +21,11 @@ class Block extends Component {
 			},
 		};
 
-		this.synth = new Vsynth();
+		this.synth = new Vsynth(this.state.data);
 		this.handleClick = this.handleClick.bind(this);
 		this.handleWheel = this.handleWheel.bind(this);
 		this.setPosition = this.setPosition.bind(this);
+		this.updateData = this.updateData.bind(this);
 	}
 
 	componentDidMount() {
@@ -49,10 +43,20 @@ class Block extends Component {
 	}
 
 	handleWheel(e) {
-		const { position, data } = this.state;
+		const { position } = this.state;
 		const { r, c } = position;
 		if (r !== -1 && c !== -1) {
-			data[r][c] += e.deltaY;
+			this.updateData(r, c, e.deltaY * 0.2);
+		}
+	}
+
+	updateData(r, c, value) {
+		const { data } = this.state;
+		if (typeof data[r][c] === 'number') {
+			let v = data[r][c] + value;
+			v = Math.min(350, Math.max(10, v));
+			data[r][c] = v;
+			this.synth.updateValue(r, c, v);
 			this.setState({
 				data,
 			});
