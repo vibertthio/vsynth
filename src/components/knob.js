@@ -1,5 +1,4 @@
 import React from 'react';
-import uuid4 from 'uuid/v4';
 import styles from './knob.module.scss';
 
 export default (props) => {
@@ -13,7 +12,6 @@ export default (props) => {
 
 	return (
   <button
-    key={uuid4()}
     className={`${styles.module}`}
     onMouseEnter={() => {
 				onEnter(r, c);
@@ -22,7 +20,7 @@ export default (props) => {
 				onEnter(-1, -1);
 			}}
 		>
-    <div className={`${styles.knob} ${active ? '' : (styles.active)}`}>
+    <div className={`${styles.knob} ${active ? (styles.active) : ''}`}>
       <span className={styles.dot} style={style} />
     </div>
   </button>

@@ -1,0 +1,57 @@
+@import "_makeShadow";
+
+@mixin longshadow($original-shadow: "") {
+  box-shadow: makeShadow($original-shadow, 20);
+}
+
+@mixin shortshadow($original-shadow: "") {
+  box-shadow: makeShadow($original-shadow, 15);
+}
+
+.module {
+  flex: 1 0 auto;
+  height:auto;
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  .container {
+    display: flex;
+    margin: 40% auto;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    border: 1px solid #666;
+    background-color: #aaa;
+
+    .button {
+      outline: none;
+      border: none;
+      background-color: transparent;
+
+      position: relative;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      top: -2px;
+      background: linear-gradient(to right, #da2d56, #ce2f0a);
+      border-radius: 50%;
+      border-bottom: 2px solid darken(#da2d56, 20);
+      transition: all .2s;
+      $original-shadow:
+      inset -2px 0 1px 1px rgba(255,255,255,.2),
+      inset 0 0 8px 8px rgba(128,128,128,.1),
+      inset -10px 4px 10px 2px rgba(0,0,0,0.05);
+
+      box-shadow: makeShadow($original-shadow, 10);
+
+      &.on {
+        top: 0;
+        background: linear-gradient(to right, darken(#da2d56,5), #af2505);
+        border-bottom: 0 solid darken(#da2d56, 20);
+        box-shadow: makeShadow($original-shadow, 2);
+      }
+    }
+  }
+
+}

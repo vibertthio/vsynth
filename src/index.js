@@ -4,13 +4,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import './index.scss';
 import styles from './index.module.scss';
-import sound from './sound';
 import Block from './components/block';
-
 // import particles from './three/particles/';
 // particles();
+
 injectTapEventPlugin();
-sound();
 
 const App = () => (
   <div>

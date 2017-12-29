@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import uuid4 from 'uuid/v4';
 import Knob from './knob';
+import Button from './button';
 import styles from './block.module.scss';
+import Vsynth from '../sound/vsynth';
+
 
 class Block extends Component {
 	constructor() {
@@ -15,14 +18,18 @@ class Block extends Component {
 				data[i][j] = 0;
 			}
 		}
+		this.number = n;
 		this.state = {
+			on: false,
+			data,
 			position: {
 				r: -1,
 				c: -1,
 			},
-			data,
 		};
 
+		this.synth = new Vsynth();
+		this.handleClick = this.handleClick.bind(this);
 		this.handleWheel = this.handleWheel.bind(this);
 		this.setPosition = this.setPosition.bind(this);
 	}
@@ -39,7 +46,6 @@ class Block extends Component {
 		this.setState({
 			position: { r, c },
 		});
-		console.log(`pos: ${r}, ${c}`);
 	}
 
 	handleWheel(e) {
@@ -53,23 +59,39 @@ class Block extends Component {
 		}
 	}
 
+	handleClick() {
+		const { on } = this.state;
+		if (on) {
+			this.synth.stop();
+		} else {
+			this.synth.start();
+		}
+		this.setState({
+			on: !on,
+		});
+	}
+
 	render() {
-		const { position, data } = this.state;
+		const n = this.number;
+		const { on, position, data } = this.state;
 		return (
   <div className={styles.container}>
     <div className={styles.table}>
       {data.map((row, r) => (
         <div key={uuid4()} className={`${styles.row}`}>
-          {row.map((d, c) => (
-            <Knob
-              key={uuid4()}
-              r={r}
-              c={c}
-              onEnter={this.setPosition}
-              value={d}
-              active={(r === position.r) && (c === position.c)}
-            />
-							))}
+          {row.map((d, c) =>
+									(r === n - 1 && c === n - 1 ? (
+  <Button key={uuid4()} on={on} onClick={this.handleClick} />
+									) : (
+  <Knob
+    key={uuid4()}
+    r={r}
+    c={c}
+    onEnter={this.setPosition}
+    value={d}
+    active={r === position.r && c === position.c}
+  />
+									)))}
         </div>
 					))}
     </div>
