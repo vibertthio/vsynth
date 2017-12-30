@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import uuid4 from 'uuid/v4';
+import key from 'keymaster';
+
 import Knob from './knob';
 import Button from './button';
 import styles from './block.module.scss';
@@ -26,6 +28,7 @@ class Block extends Component {
 		this.synth = new Vsynth(this.state.data);
 		this.synth.start();
 
+		this.detectKeyboard = this.detectKeyboard.bind(this);
 		this.handleClick = this.handleClick.bind(this);
 		this.handleWheel = this.handleWheel.bind(this);
 		this.setPosition = this.setPosition.bind(this);
@@ -34,6 +37,7 @@ class Block extends Component {
 
 	componentDidMount() {
 		window.addEventListener('wheel', this.handleWheel);
+		this.detectKeyboard();
 	}
 
 	componentWillUnmount() {
@@ -43,6 +47,12 @@ class Block extends Component {
 	setPosition(r, c) {
 		this.setState({
 			position: { r, c },
+		});
+	}
+
+	detectKeyboard() {
+		key('space', () => {
+			this.triggerSound();
 		});
 	}
 
@@ -68,6 +78,10 @@ class Block extends Component {
 	}
 
 	handleClick() {
+		this.triggerSound();
+	}
+
+	triggerSound() {
 		const { on } = this.state;
 		if (on) {
 			this.synth.stop();
