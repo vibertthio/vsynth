@@ -1,5 +1,6 @@
 import { Transport } from 'tone';
 import Kick from './kick';
+import Snare from './snare';
 import OpenHihat from './open-hihat';
 import ClosedHihat from './closed-hihat';
 
@@ -8,10 +9,12 @@ class Vsynth {
 		const values = data.map(r => r.map(d => (d - 10) / 340));
 
 		const kick = new Kick();
+		const snare = new Snare();
 		const ohh = new OpenHihat();
 		const chh = new ClosedHihat();
 		kick.start();
-		ohh.start();
+		snare.start();
+		// ohh.start();
 		chh.start();
 
 		// Transport.start();

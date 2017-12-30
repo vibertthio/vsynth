@@ -3,7 +3,7 @@ import { Filter, NoiseSynth, Part } from 'tone';
 export default class ClosedHihat {
 	constructor() {
 		const lowPass = new Filter({
-			frequency: 14000,
+			frequency: 10000,
 		}).toMaster();
 
 		const synth = new NoiseSynth({
@@ -12,8 +12,8 @@ export default class ClosedHihat {
 				Q: 1,
 			},
 			envelope: {
-				attack: 0.01,
-				decay: 0.07,
+				attack: 0.005,
+				decay: 0.04,
 			},
 			filterEnvelope: {
 				attack: 0.01,

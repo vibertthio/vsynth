@@ -28,7 +28,7 @@ export default class OpenHihat {
 			(time) => {
 				synth.triggerAttack(time);
 			},
-			['2*16n', '6*8n'],
+			['0:0:2', '0:3:1'],
 		);
 
 		this.synth = synth;

@@ -25,7 +25,8 @@ export default class Kick {
 			(time) => {
 				this.synth.triggerAttackRelease('D1', time);
 			},
-			['0:0', '0:1', '0:2', '0:3'],
+			// ['0:0', '0:1', '0:2', '0:3'],
+			['0:0', '0:2'],
 		);
 
 		this.synth = synth;
