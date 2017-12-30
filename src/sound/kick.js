@@ -2,9 +2,9 @@ import { Filter, MembraneSynth, Part } from 'tone';
 
 export default class Kick {
 	constructor() {
-		// const lowPass = new Filter({
-		// 	frequency: 14000,
-		// }).toMaster();
+		const lowPass = new Filter({
+			frequency: 14000,
+		}).toMaster();
 
 		const synth = new MembraneSynth({
 			pitchDecay: 0.05,
@@ -27,7 +27,9 @@ export default class Kick {
 			},
 			['0:0', '0:1', '0:2', '0:3'],
 		);
+
 		this.synth = synth;
+		this.lpf = lowPass;
 		this.part = part;
 	}
 

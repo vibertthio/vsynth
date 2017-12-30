@@ -1,4 +1,4 @@
-import { Synth, Sequence, Freeverb, Filter, Panner } from 'tone';
+import { Synth, Freeverb, Filter, Panner } from 'tone';
 import * as Key from 'tonal-key';
 
 export default class BasicSynth {

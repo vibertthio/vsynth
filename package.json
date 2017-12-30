@@ -11,6 +11,7 @@
     "build": "webpack -d --config ./webpack.prod.config.js --colors",
     "start": "serve public/",
     "lint": "eslint ./src",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d public"
   },
   "keywords": [],
