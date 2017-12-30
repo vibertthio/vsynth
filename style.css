@@ -1,0 +1,187 @@
+body {
+  background-color: #444;
+  font: 200 normal 20px/1 "neuzeit-grotesk", "Helvetica Neue", Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-perspective: 1000px;
+  min-height: 100vh; }
+.index-module__main___3K8zQ {
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.index-module__title____kuSF {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  /* padding: 5px; */
+  font-size: 1rem;
+  text-align: center;
+  color: #ffffff;
+  transform: scale(1, 1.2);
+  -webkit-transform: scale(1, 1.2);
+  /* Safari and Chrome */
+  -moz-transform: scale(1, 1.2);
+  /* Firefox */
+  -ms-transform: scale(1, 1.2);
+  /* IE 9+ */
+  -o-transform: scale(1, 1.2);
+  /* Opera */ }
+
+.index-module__title____kuSF a {
+  color: #aaa;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  text-decoration: none;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                supported by Chrome and Opera */ }
+
+.index-module__title____kuSF a:hover {
+  color: #ccc; }
+.knob-module__module___3jR4l {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  height: auto;
+  outline: none;
+  border: none;
+  background-color: transparent; }
+  .knob-module__module___3jR4l .knob-module__knob___Ld4ld {
+    width: 100%;
+    margin: auto;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    background-color: #eee;
+    position: relative;
+    -webkit-box-shadow: inset 0 -3px 1px rgba(0, 0, 0, 0.2), inset 0 3px 1px rgba(255, 255, 255, 0.9), 0px 0px rgba(0, 0, 0, 0.1), -0px 1px 2px rgba(0, 0, 0, 0.05), -1px 2px 2px rgba(0, 0, 0, 0.0464286), -2px 3px 2px rgba(0, 0, 0, 0.0428571), -3px 4px 2px rgba(0, 0, 0, 0.0392857), -4px 5px 2px rgba(0, 0, 0, 0.0357143), -5px 6px 2px rgba(0, 0, 0, 0.0321429), -6px 7px 2px rgba(0, 0, 0, 0.0285714), -7px 8px 2px rgba(0, 0, 0, 0.025), -8px 9px 2px rgba(0, 0, 0, 0.0214286), -9px 10px 2px rgba(0, 0, 0, 0.0178571), -10px 11px 2px rgba(0, 0, 0, 0.0142857), -11px 12px 2px rgba(0, 0, 0, 0.0107143), -12px 13px 2px rgba(0, 0, 0, 0.00714286), -13px 14px 2px rgba(0, 0, 0, 0.00357143), -14px 15px 2px transparent;
+            box-shadow: inset 0 -3px 1px rgba(0, 0, 0, 0.2), inset 0 3px 1px rgba(255, 255, 255, 0.9), 0px 0px rgba(0, 0, 0, 0.1), -0px 1px 2px rgba(0, 0, 0, 0.05), -1px 2px 2px rgba(0, 0, 0, 0.0464286), -2px 3px 2px rgba(0, 0, 0, 0.0428571), -3px 4px 2px rgba(0, 0, 0, 0.0392857), -4px 5px 2px rgba(0, 0, 0, 0.0357143), -5px 6px 2px rgba(0, 0, 0, 0.0321429), -6px 7px 2px rgba(0, 0, 0, 0.0285714), -7px 8px 2px rgba(0, 0, 0, 0.025), -8px 9px 2px rgba(0, 0, 0, 0.0214286), -9px 10px 2px rgba(0, 0, 0, 0.0178571), -10px 11px 2px rgba(0, 0, 0, 0.0142857), -11px 12px 2px rgba(0, 0, 0, 0.0107143), -12px 13px 2px rgba(0, 0, 0, 0.00714286), -13px 14px 2px rgba(0, 0, 0, 0.00357143), -14px 15px 2px transparent; }
+    .knob-module__module___3jR4l .knob-module__knob___Ld4ld .knob-module__indicator___1Dj17 {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 3px;
+      height: 25%;
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transform-origin: 50% 200%;
+              transform-origin: 50% 200%;
+      background-color: #EA5D5D; }
+    .knob-module__module___3jR4l .knob-module__knob___Ld4ld .knob-module__dot___3t13s {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 12%;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transform-origin: 0% 500%;
+              transform-origin: 0% 500%;
+      background-color: #888; }
+    .knob-module__module___3jR4l .knob-module__knob___Ld4ld.knob-module__active___T_JRb .knob-module__dot___3t13s {
+      background-color: #A33; }
+.button-module__module___363EX {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  height: auto;
+  outline: none;
+  border: none;
+  background-color: transparent; }
+  .button-module__module___363EX .button-module__container___2R7S6 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 40% auto;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    border: 1px solid #666;
+    background-color: #aaa; }
+    .button-module__module___363EX .button-module__container___2R7S6 .button-module__button___1WU8w {
+      outline: none;
+      border: none;
+      background-color: transparent;
+      position: relative;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      top: -2px;
+      background: -webkit-gradient(linear, left top, right top, from(#da2d56), to(#ce2f0a));
+      background: linear-gradient(to right, #da2d56, #ce2f0a);
+      border-radius: 50%;
+      border-bottom: 2px solid #891833;
+      -webkit-transition: all .2s;
+      transition: all .2s;
+      -webkit-box-shadow: inset -2px 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 0 8px 8px rgba(128, 128, 128, 0.1), inset -10px 4px 10px 2px rgba(0, 0, 0, 0.05), 0px 0px rgba(0, 0, 0, 0.1), -0px 1px 2px rgba(0, 0, 0, 0.05), -1px 2px 2px rgba(0, 0, 0, 0.0444444), -2px 3px 2px rgba(0, 0, 0, 0.0388889), -3px 4px 2px rgba(0, 0, 0, 0.0333333), -4px 5px 2px rgba(0, 0, 0, 0.0277778), -5px 6px 2px rgba(0, 0, 0, 0.0222222), -6px 7px 2px rgba(0, 0, 0, 0.0166667), -7px 8px 2px rgba(0, 0, 0, 0.0111111), -8px 9px 2px rgba(0, 0, 0, 0.00555556), -9px 10px 2px transparent;
+              box-shadow: inset -2px 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 0 8px 8px rgba(128, 128, 128, 0.1), inset -10px 4px 10px 2px rgba(0, 0, 0, 0.05), 0px 0px rgba(0, 0, 0, 0.1), -0px 1px 2px rgba(0, 0, 0, 0.05), -1px 2px 2px rgba(0, 0, 0, 0.0444444), -2px 3px 2px rgba(0, 0, 0, 0.0388889), -3px 4px 2px rgba(0, 0, 0, 0.0333333), -4px 5px 2px rgba(0, 0, 0, 0.0277778), -5px 6px 2px rgba(0, 0, 0, 0.0222222), -6px 7px 2px rgba(0, 0, 0, 0.0166667), -7px 8px 2px rgba(0, 0, 0, 0.0111111), -8px 9px 2px rgba(0, 0, 0, 0.00555556), -9px 10px 2px transparent; }
+      .button-module__module___363EX .button-module__container___2R7S6 .button-module__button___1WU8w.button-module__on___2kyZL {
+        top: 0;
+        background: -webkit-gradient(linear, left top, right top, from(#ca244b), to(#af2505));
+        background: linear-gradient(to right, #ca244b, #af2505);
+        border-bottom: 0 solid #891833;
+        -webkit-box-shadow: inset -2px 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 0 8px 8px rgba(128, 128, 128, 0.1), inset -10px 4px 10px 2px rgba(0, 0, 0, 0.05), 0px 0px rgba(0, 0, 0, 0.1), -0px 1px 2px rgba(0, 0, 0, 0.05), -1px 2px 2px transparent;
+                box-shadow: inset -2px 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 0 8px 8px rgba(128, 128, 128, 0.1), inset -10px 4px 10px 2px rgba(0, 0, 0, 0.05), 0px 0px rgba(0, 0, 0, 0.1), -0px 1px 2px rgba(0, 0, 0, 0.05), -1px 2px 2px transparent; }
+.block-module__container___NmXgM {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 3px;
+  background-color: #eee;
+  -webkit-box-shadow: inset 0 5px 5px #FFF, 0 6px 10px #000, 0 15px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 5px 5px #FFF, 0 6px 10px #000, 0 15px 20px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden; }
+  .block-module__viewHelp___1qoSO .block-module__container___NmXgM {
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+
+.block-module__table___226YT {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.block-module__row___2IKn_ {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
