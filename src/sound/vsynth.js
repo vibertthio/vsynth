@@ -1,4 +1,4 @@
-import { Transport } from 'tone';
+import { Transport, now } from 'tone';
 import Kick from './kick';
 import Snare from './snare';
 import OpenHihat from './open-hihat';
@@ -53,7 +53,7 @@ class Vsynth {
 						this.kick.synth.envelope.decay = lerp(0, 1, 0.4, 6.0, v);
 						break;
 					case 1:
-						this.kick.synth.envelope.attack = lerp(0, 1, 0.001, 1.0, v);
+						this.kick.synth.envelope.attack = lerp(0, 1, 0.001, 0.3, v);
 						// this.kick.synth.envelope.release = lerp(0, 1, 0.5, 3.0, v);
 						// this.monoSynth.envelope.decay = lerp(0, 1, 0.2, 0.005, v);
 						break;

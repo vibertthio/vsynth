@@ -1,4 +1,4 @@
-import { Filter, NoiseSynth, Part } from 'tone';
+import { Filter, NoiseSynth, Part, Time } from 'tone';
 
 export default class ClosedHihat {
 	constructor() {
@@ -7,7 +7,7 @@ export default class ClosedHihat {
 		}).toMaster();
 
 		const synth = new NoiseSynth({
-			volume: -15,
+			volume: -17,
 			filter: {
 				Q: 1,
 			},
@@ -47,6 +47,7 @@ export default class ClosedHihat {
 				'0:3:1',
 				'0:3:2',
 				'0:3:3',
+				Time('0:3:3') + Time('32n'),
 			],
 		);
 

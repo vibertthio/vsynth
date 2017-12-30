@@ -7,16 +7,16 @@ export default class Snare {
 		}).toMaster();
 
 		const noise = new NoiseSynth({
-			volume: -10,
+			volume: -12,
 			noise: {
 				type: 'pink',
 				playbackRate: 3,
 			},
 			envelope: {
 				attack: 0.001,
-				decay: 0.15,
+				decay: 0.13,
 				sustain: 0,
-				release: 0.05,
+				release: 0.03,
 			},
 		}).connect(lowPass);
 
@@ -35,7 +35,7 @@ export default class Snare {
 
 		const part = new Part(
 			(time) => {
-				const notes = ['C2', 'D#2', 'A2'];
+				const notes = ['C2', 'D#2', 'G2'];
 				poly.voices.forEach((v, i) => {
 					v.oscillator.frequency.setValueAtTime(Frequency(notes[i]) * 10, time);
 					v.oscillator.frequency.exponentialRampToValueAtTime(notes[i], time + 0.04);
