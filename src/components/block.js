@@ -9,11 +9,13 @@ class Block extends Component {
 	constructor() {
 		super();
 		const n = 8;
-		const data = Array(n).fill([]).map(() => Array(n).fill(10));
+		const data = Array(n)
+			.fill([])
+			.map(() => Array(n).fill(10));
 
 		this.number = n;
 		this.state = {
-			on: false,
+			on: true,
 			data,
 			position: {
 				r: -1,
@@ -22,6 +24,8 @@ class Block extends Component {
 		};
 
 		this.synth = new Vsynth(this.state.data);
+		this.synth.start();
+
 		this.handleClick = this.handleClick.bind(this);
 		this.handleWheel = this.handleWheel.bind(this);
 		this.setPosition = this.setPosition.bind(this);

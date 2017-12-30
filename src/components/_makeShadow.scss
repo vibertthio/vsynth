@@ -10,3 +10,12 @@
   }
   @return $val;
 }
+
+
+@mixin longshadow($original-shadow: "") {
+  box-shadow: makeShadow($original-shadow, 15);
+}
+
+@mixin shortshadow($original-shadow: "") {
+  box-shadow: makeShadow($original-shadow, 10);
+}
