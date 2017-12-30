@@ -14,9 +14,9 @@ export default class Kick {
 			},
 			envelope: {
 				attack: 0.001,
-				decay: 0.8,
+				decay: 0.4,
 				sustain: 0.01,
-				release: 0.5,
+				release: 0.3,
 				attackCurve: 'exponential',
 			},
 		}).toMaster();

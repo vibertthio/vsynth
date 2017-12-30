@@ -35,12 +35,13 @@ export default class Snare {
 
 		const part = new Part(
 			(time) => {
-				const notes = ['C2', 'D#2', 'G2'];
+				const notes = ['C2', 'D#2', 'A2'];
 				poly.voices.forEach((v, i) => {
 					v.oscillator.frequency.setValueAtTime(Frequency(notes[i]) * 10, time);
 					v.oscillator.frequency.exponentialRampToValueAtTime(notes[i], time + 0.04);
 					v.envelope.triggerAttackRelease('16n', time);
 				});
+				// poly.triggerAttackRelease(['C4', 'D#4', 'G4'], time);
 				noise.triggerAttackRelease('16n', time);
 			},
 			['0:1', '0:3'],
