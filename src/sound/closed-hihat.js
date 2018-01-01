@@ -3,6 +3,7 @@ import { Filter, NoiseSynth, Part, Time } from 'tone';
 export default class ClosedHihat {
 	constructor() {
 		const lowPass = new Filter({
+			type: 'lowpass',
 			frequency: 10000,
 		}).toMaster();
 
