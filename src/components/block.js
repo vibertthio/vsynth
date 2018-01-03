@@ -47,7 +47,7 @@ class Block extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('wheel', this.handleWheel);
+    // window.addEventListener('wheel', this.handleWheel);
     window.addEventListener('mouseup', this.handleMouseUp);
     window.addEventListener('mousemove', this.handleMouseMove);
     this.detectKeyboard();
@@ -63,7 +63,7 @@ class Block extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('wheel', this.handleWheel);
+    // window.removeEventListener('wheel', this.handleWheel);
   }
 
   setPosition(r, c) {
@@ -110,7 +110,7 @@ class Block extends Component {
   handleMouseDown(e) {
     let { mouseDown, mouseDownPosition } = this.state;
     const { position } = this.state;
-    console.log(`down: ${position.r} ${position.c}`);
+    // console.log(`down: ${position.r} ${position.c}`);
 
     mouseDownPosition = Object.assign({}, position);
     mouseDown = true;
@@ -125,11 +125,10 @@ class Block extends Component {
 
   handleMouseUp() {
     let { mouseDownPosition, mouseDown } = this.state;
-    console.log(`up end: ${mouseDownPosition.r} ${mouseDownPosition.c}`);
-
     mouseDownPosition = { r: -1, c: -1 };
     mouseDown = false;
     this.setState({
+      mouseDownPosition,
       mouseDown,
     });
   }
@@ -178,6 +177,7 @@ class Block extends Component {
                       c={c}
                       onEnter={this.setPosition}
                       onMouseDown={this.handleMouseDown}
+                      onWheel={this.handleWheel}
                       value={d}
                       active={r === position.r && c === position.c}
                     />

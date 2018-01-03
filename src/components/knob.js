@@ -3,7 +3,7 @@ import styles from './knob.module.scss';
 
 export default (props) => {
   const {
- onEnter, r, c, value, active, onMouseDown,
+ onEnter, r, c, value, active, onMouseDown, onWheel,
 } = props;
 
   const style = {
@@ -22,6 +22,9 @@ export default (props) => {
       }}
       onMouseLeave={() => {
         onEnter(-1, -1);
+      }}
+      onWheel={(e) => {
+        onWheel(e);
       }}
     >
       <div className={`${styles.knob} ${active ? styles.active : ''}`}>
