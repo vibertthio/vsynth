@@ -17,6 +17,7 @@ class Block extends Component {
 
 		this.number = n;
 		this.state = {
+			nOfCol: 8,
 			on: true,
 			data,
 			position: {
@@ -26,7 +27,6 @@ class Block extends Component {
 		};
 
 		this.synth = new Vsynth(this.state.data);
-		this.synth.start();
 
 		this.detectKeyboard = this.detectKeyboard.bind(this);
 		this.handleClick = this.handleClick.bind(this);
@@ -38,6 +38,15 @@ class Block extends Component {
 	componentDidMount() {
 		window.addEventListener('wheel', this.handleWheel);
 		this.detectKeyboard();
+
+		const n = this.state.nOfCol;
+		for (let i = 0; i < n; i += 1) {
+			for (let j = 0; j < n; j += 1) {
+				this.updateData(i, j, 0);
+			}
+		}
+
+		this.synth.start();
 	}
 
 	componentWillUnmount() {
