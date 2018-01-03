@@ -49,24 +49,35 @@ class Vsynth {
 			case 0:
 				switch (c) {
 					case 0:
-						// this.monoSynth.envelope.attack = lerp(0, 1, 0.005, 1.5, v);
 						this.kick.synth.envelope.decay = lerp(0, 1, 0.4, 6.0, v);
 						break;
 					case 1:
 						this.kick.synth.envelope.attack = lerp(0, 1, 0.001, 0.3, v);
-						// this.kick.synth.envelope.release = lerp(0, 1, 0.5, 3.0, v);
-						// this.monoSynth.envelope.decay = lerp(0, 1, 0.2, 0.005, v);
 						break;
 					case 2:
-						// this.hpf.frequency.value = lerp(0, 1, 100, 2000, v);
 						break;
 					case 3:
-						// this.lpf.frequency.value = lerp(0, 1, 2000, 50, v);
 						break;
 					default:
 						break;
 				}
 				break;
+			case 1:
+				switch (c) {
+					case 0:
+						this.chh.hpf.frequency.value = lerp(0, 1, 100, 10000, v);
+						break;
+					case 1:
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					default:
+						break;
+				}
+				break;
+
 			default:
 				break;
 		}

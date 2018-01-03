@@ -2,9 +2,9 @@ import { Filter, NoiseSynth, Part, Time } from 'tone';
 
 export default class ClosedHihat {
 	constructor() {
-		const lowPass = new Filter({
-			type: 'lowpass',
-			frequency: 10000,
+		const hpf = new Filter({
+			type: 'highpass',
+			frequency: 1000,
 		}).toMaster();
 
 		const synth = new NoiseSynth({
@@ -23,7 +23,7 @@ export default class ClosedHihat {
 				octaves: -2.5,
 				exponent: 4,
 			},
-		}).connect(lowPass);
+		}).connect(hpf);
 
 		const part = new Part(
 			(time) => {
@@ -53,7 +53,7 @@ export default class ClosedHihat {
 		);
 
 		this.synth = synth;
-		this.lpf = lowPass;
+		this.hpf = hpf;
 		this.part = part;
 	}
 
